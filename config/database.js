@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
 
-module.exports = mongoose.connect("mongodb://localhost/db_finance", {
+module.exports = mongoose.connect("mongodb+srv://joao:joao@cluster0.jlbcl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
-});
+}).then(()=>{
+    console.log("Success conected mongodb");
+}).catch((err)=>{
+    console.log(`ERROR ${err}`);
+})
 
 mongoose.Error.messages.general.required = "O atributo '{PATH}' é obrigatório!"
 mongoose.Error.messages.Number.min = "O value de'{VALUE}' é menor que '{min}'!"

@@ -1,5 +1,9 @@
 const restful = require('node-restful');
-const mongoose = require('mongoose')
+const mongoose = restful.mongoose;
+
+const User = new mongoose.Schema({
+    name: {type: String, required: true}
+})
 
 const CreditSchema = new mongoose.Schema({
     name: {
@@ -31,7 +35,7 @@ const DebitSchema = new mongoose.Schema({
     },
 });
 
-const billingCycleSchema = new mongoose.Schema({
+const BillingCycleSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -49,8 +53,8 @@ const billingCycleSchema = new mongoose.Schema({
         max: 2100
     },
     creditos: [CreditSchema],
-    debitos: [DebitSchema]
+    debitos: [DebitSchema] 
 });
 
 
-module.exports = restful.model("billingCycle", billingCycleSchema);
+module.exports = restful.model("billingCycle", BillingCycleSchema);

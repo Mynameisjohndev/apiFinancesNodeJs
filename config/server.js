@@ -6,8 +6,9 @@ const server = express()
 //require('../api/billingCycle/billingCycle');
 //const BS = mongoose.model('billingCycle');
 
-server.use(bodyparser.urlencoded({ extended: true }));
+server.use(bodyparser.urlencoded({ extended: false }));
 server.use(bodyparser.json());
+server.use(bodyparser.raw());
 
 // server.get('/teste', (req, res) => {
 //     BS.find().lean().then((bs)=>{
