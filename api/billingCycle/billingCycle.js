@@ -1,10 +1,6 @@
 const restful = require('node-restful');
 const mongoose = restful.mongoose;
 
-const User = new mongoose.Schema({
-    name: {type: String, required: true}
-})
-
 const CreditSchema = new mongoose.Schema({
     name: {
         type: String,

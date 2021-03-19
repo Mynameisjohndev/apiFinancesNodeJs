@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 
 module.exports = mongoose.connect("mongodb+srv://joao:joao@cluster0.jlbcl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
+    useUnifiedTopology: true
 }).then(()=>{
     console.log("Success conected mongodb");
 }).catch((err)=>{

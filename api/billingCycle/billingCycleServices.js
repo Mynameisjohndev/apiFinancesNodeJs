@@ -13,7 +13,7 @@ function sendMessageError(req, res, next){
         var errors = parseErrors(bundle.errors);
         res.status(500).json(errors);
     }else{
-        next
+        next()
     }
 }
 
