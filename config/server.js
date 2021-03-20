@@ -1,15 +1,16 @@
 const express = require('express');
 const server = express();
-const cors = require('cors');
+const alowcors = require('./cors')
+// const cors = require('cors');
 
-server.use((req, res, next)=>{
-   res.header("Access-Control-Allow-Origin", "*")
-   res.header('Access-Control-Allow-Methods', 'GET', 'POST', 'OPTIONS', 'PUT','PATCH', 'DELETE')
-   res.header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept')
-   server.use(cors());
-   next();
-})
-
+// server.use((req, res, next)=>{
+//    res.header("Access-Control-Allow-Origin", "*")
+//    res.header('Access-Control-Allow-Methods', 'GET', 'POST', 'OPTIONS', 'PUT','PATCH', 'DELETE')
+//    res.header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept')
+//    server.use(cors());
+//    next();
+// })
+server.use(alowcors)
 server.use(express.urlencoded({ extended: false }));
 server.use(express.json());
 
