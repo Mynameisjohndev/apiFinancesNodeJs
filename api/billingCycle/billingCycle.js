@@ -48,8 +48,8 @@ const BillingCycleSchema = new mongoose.Schema({
         min: 1970,
         max: 2100
     },
-    creditos: [CreditSchema],
-    debitos: [DebitSchema] 
+    creditos: [CreditSchema], 
+    debitos: [DebitSchema]
 });
 
 

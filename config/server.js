@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const alowcors = require('./cors')
+const queryParser = require('express-query-int')
 // const cors = require('cors');
 
 // server.use((req, res, next)=>{
@@ -11,6 +12,7 @@ const alowcors = require('./cors')
 //    next();
 // })
 server.use(alowcors)
+server.use(queryParser())
 server.use(express.urlencoded({ extended: false }));
 server.use(express.json());
 
